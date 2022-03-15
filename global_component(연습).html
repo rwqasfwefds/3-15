@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .header{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- html -->
+    <div id="app">
+        <!-- header conponent 위치-->
+        <header_html></header_html>
+        <!-- body conponent 위치-->
+        <section_html></section_html>
+        <!-- footer conponent 위치-->
+        <footer_html></footer_html>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        // 컴포넌트 정의
+        // header 컴포넌트 정의
+        // 백틱을 쓰셈 백틱 쓰면 태그들 + 로 연결 할 필요가 없잖슴
+        Vue.component('header_html', {
+            /* html */
+            template:
+            `<header class = "header">
+                <h3>머리</h3>
+            </header>`
+            // 백틱 예
+            // template: `
+            // <header>
+            //     <p>머리</p>
+            // </header>`
+        });
+        // body 컴포넌트 정의
+        Vue.component('section_html', {
+            template: '<section>몸통</section>'
+        });
+        // footer 컴포넌트 정의
+        Vue.component('footer_html', {
+            template: '<footer>발</footer>'
+        });
+        // Vue 생성
+
+        new Vue({
+            el : '#app',
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>첫 번째 뷰</p>
+    <div id="app">
+        {{ message }}
+    </div>
+
+    <p>두 번째 뷰</p>
+    <div id="app2">
+        {{str}}
+    </div>
+
+    <p>세 번째 뷰</p>
+    <div id="app3"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el : '#app',
+            data : {
+                message : 'Hello Vue.js!'
+            }
+        });
+
+        // 연습문제 #1
+        // html 새로운 뷰를 만들고 출력해 보세요
+        // 출력 : 또 다른 뷰를 만들었습니다.
+        new Vue({
+            el : '#app2',
+            data : {
+                str : '또 다른 뷰를 만들었습니다.'
+            }
+        });
+
+        new Vue({
+            el : '#app3',
+            data : {
+                str : '템플릿으로 만듦'
+            },
+            template : '<h3>{{str}}</h3>'
+        });
+
+
+    </script>
+    
+</body>
+</html>
